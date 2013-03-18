@@ -1,4 +1,3 @@
-package me.jacoby.androidorm.annotation;
 
 /*
 * Copyright (C) 2013 Jacob Yang
@@ -15,29 +14,12 @@ package me.jacoby.androidorm.annotation;
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+package me.jacoby.androidorm.meta;
 
 /**
- * Column注解描述了表的字段信息，如表示了字段的名称、字段的类型、长度等
- * 
+ * SQLite数据库表主键信息封装
  * @author mythyangfan@163.com
+ * @since 2013-3-19
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
-public @interface Column {
-	
-	/**
-	 * name表示所描述的字段名称
-	 * @return 字段名称
-	 */
-	String name() default "";
-
-	/**
-	 * 表格字段是否为空
-	 * @return 字段是否为空
-	 */
-	boolean isNotNull() default false;
+public final class IdColumnMeta extends ColumnMeta {
 }
